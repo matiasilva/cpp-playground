@@ -26,20 +26,16 @@ void draw_lines(sf::RenderWindow *window) {
     }
 }
 
-void init_cells(int grid[][N_COLS]) {
-    for (int i = 0; i < N_ROWS; i++) {
-        for (int j = 0; j < N_COLS; j++) {
-            if (i == (N_ROWS - 1)) {
-                // last row
-                grid[i][j] = 1;
-                continue;
-            }
-            grid[i][j] = 0;
+void init_cells(const std::array<int, N_CELLS>& grid) {
+    for (int i = 0; i < N_COLS; i++) {
+            int index = i + (N_ROWS - 1) * N_COLS;
+            // last row
+            grid[index] = 1;
         }
     }
-}
 
-void update_cells(int grid[][N_COLS], int next_grid[][N_COLS]) {
+
+void update_cells(const std::array<int, N_CELLS>& grid, const std::array<int, N_CELLS>& next_grid) {
     /* ALGORITHM
         1. check if we are 1 and check neighbor below if 1
             a) if 1, don't move
