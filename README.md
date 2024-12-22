@@ -14,18 +14,8 @@ To try out web support, I used empscripten to compile the C++ to WASM. The
 
 ### Falling sand simulation
 
-<<<<<<< Updated upstream
-![falling-sand](images/falling-sand.png|width=100)
-=======
 <img src="images/falling-sand.png" width="150">
->>>>>>> Stashed changes
 
 ### Rotating rainbow wheel
 
-This was a fun one to make; the floating point rounding errors led to a nice retro look.
-<<<<<<< Updated upstream
-![rainbowwheel](images/rainbow.png|width=100)
-=======
 <img src="images/rainbow.png" width="150">
->>>>>>> Stashed changes
-
