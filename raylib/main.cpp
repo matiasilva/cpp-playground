@@ -1,6 +1,8 @@
 #include "raylib-cpp.hpp"
 #include <random>
-#include <raylib.h>
+#if defined(PLATFORM_WEB)
+#include <emscripten/emscripten.h>
+#endif
 
 constexpr int screenWidth = 1200;
 constexpr int screenHeight = 600;
@@ -10,6 +12,7 @@ std::uniform_real_distribution<> dis(0.0f, 1.0f);
 std::normal_distribution<> disn(0.0, 1.0);
 
 raylib::Color GetRandomColor();
+void UpdateDrawFrame();
 
 class Particle {
 public:
@@ -104,27 +107,35 @@ raylib::Color GetRandomColor() {
 }
 
 std::vector<Firework> fireworks;
+raylib::Rectangle bg(0, 0, screenWidth, screenHeight);
+
+void UpdateDrawFrame() {
+  BeginDrawing();
+  {
+    bg.Draw(Fade(BLACK, 0.30));
+    if (GetRandomValue(0, 49) == 49)
+      fireworks.push_back(
+          Firework(GetRandomValue(0.1 * screenWidth, 0.9 * screenWidth - 1)));
+    for (auto &f : fireworks) {
+      f.render();
+      f.update();
+    }
+    std::erase_if(fireworks, [](auto &x) { return x.particles.empty(); });
+  }
+  EndDrawing();
+}
 
 int main() {
   raylib::Window window(screenWidth, screenHeight, "fireworks");
-  SetTargetFPS(60);
   window.ClearBackground(RAYWHITE);
-  raylib::Rectangle bg(0, 0, screenWidth, screenHeight);
-
-  while (!window.ShouldClose()) {
-    BeginDrawing();
-    {
-      bg.Draw(Fade(BLACK, 0.30));
-      if (GetRandomValue(0, 49) == 49)
-        fireworks.push_back(
-            Firework(GetRandomValue(0.1 * screenWidth, 0.9 * screenWidth - 1)));
-      for (auto &f : fireworks) {
-        f.render();
-        f.update();
-      }
-      std::erase_if(fireworks, [](auto &x) { return x.particles.empty(); });
-    }
-    EndDrawing();
+#if defined(PLATFORM_WEB)
+  emscripten_set_main_loop(UpdateDrawFrame, 0, 1);
+#else
+  SetTargetFPS(60);
+  while (!WindowShouldClose()) {
+    UpdateDrawFrame();
   }
+#endif
+  CloseWindow();
   return 0;
 }
