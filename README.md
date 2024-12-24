@@ -7,7 +7,7 @@ As the name indicates, this is a place for me to play around with C++. Historica
 I used C++ bindings for [Raylib](https://github.com/RobLoach/raylib-cpp) to produce a moderately advanced fireworks
 simulation, making use of Euler integration to approximate particle behavior.
 
-<img src="images/fireworks.gif" width="150">
+<img src="images/fireworks.gif">
 
 To try out web support, I used empscripten to compile the C++ to WASM. The
 [out-of-the-box results](https://matiasilva.github.io/cpp-playground/) were promising.
