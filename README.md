@@ -13,7 +13,11 @@ A simple utility that takes a JPEG image and outputs the equivalent in ASCII art
 | <img src="images/jpg2ascii3.jpeg" width="200">     | <img src="images/jpg2ascii3-result.png" width="200"> |
 | <img src="images/jpg2ascii4.jpeg" width="200">     | <img src="images/jpg2ascii4-result.png" width="200"> |
 
-There are two levels of detail (more mapped characters per level), which you can see above.
+There are two levels of detail (more mapped characters per level), which you can see above. All credits to test images to go https://testimages.org.
+
+## defn (C)
+
+To learn more about threading, I wrote `defn`, which continuously listens for words from stdin, looks up any submitted words on https://dictionaryapi.dev/, and crudely parses the JSON response to return the first definition it finds. Each word lookup is a new thread with pthreads and networking uses libcurl.
 
 ## Raylib (C++)
 
