@@ -1,4 +1,4 @@
-# C++ Playground
+# C/C++ Playground
 
 As the name indicates, this is a place for me to play around with C++. Historically, I've used [Processing](https://processing.org/) and [p5.js](https://p5js.org/reference/) for this sort of stuff, but wanted to try things out in C/C++.
 
@@ -13,7 +13,7 @@ A simple utility that takes a JPEG image and outputs the equivalent in ASCII art
 | <img src="images/jpg2ascii3.jpeg" width="200">     | <img src="images/jpg2ascii3-result.png" width="200"> |
 | <img src="images/jpg2ascii4.jpeg" width="200">     | <img src="images/jpg2ascii4-result.png" width="200"> |
 
-There are two levels of detail (more mapped characters per level), which you can see above. All credits to test images to go https://testimages.org.
+There are two levels of detail (more mapped characters per level), which you can see above. All credits to test images go to https://testimages.org.
 
 ## defn (C)
 
