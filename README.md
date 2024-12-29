@@ -27,10 +27,12 @@ To try out web support, I used empscripten to compile the C++ to WASM. The
 
 ## SFML (C++)
 
+This time using a different graphics library, I created two self-contained demos.
+
 ### Falling sand simulation
 
-<img src="images/falling-sand.png" width="150">
+<img src="images/falling-sand.png" width="200">
 
 ### Rotating rainbow wheel
 
-<img src="images/rainbow.png" width="150">
+<img src="images/rainbow.png" width="200">
