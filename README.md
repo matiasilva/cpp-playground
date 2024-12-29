@@ -8,10 +8,10 @@ A simple utility that takes a JPEG image and outputs the equivalent in ASCII art
 
 | Test Image                                  | ASCII Image                                 |
 |---------------------------------------------|---------------------------------------------|
-| <img src="images/jpg2ascii1.jpeg" width="150">     | <img src="images/jpg2ascii1-result.png" width="150"> |
-| <img src="images/jpg2ascii2.jpeg" width="150">     | <img src="images/jpg2ascii2-result.png" width="150"> |
-| <img src="images/jpg2ascii3.jpeg" width="150">     | <img src="images/jpg2ascii3-result.png" width="150"> |
-| <img src="images/jpg2ascii4.jpeg" width="150">     | <img src="images/jpg2ascii4-result.png" width="150"> |
+| <img src="images/jpg2ascii1.jpeg" width="200">     | <img src="images/jpg2ascii2-result.png" width="200"> |
+| <img src="images/jpg2ascii2.jpeg" width="200">     | <img src="images/jpg2ascii1-result.png" width="200"> |
+| <img src="images/jpg2ascii3.jpeg" width="200">     | <img src="images/jpg2ascii3-result.png" width="200"> |
+| <img src="images/jpg2ascii4.jpeg" width="200">     | <img src="images/jpg2ascii4-result.png" width="200"> |
 
 There are two levels of detail (more mapped characters per level), which you can see above.
 
