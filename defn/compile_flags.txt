@@ -1,2 +1,0 @@
--L/opt/homebrew/opt/jpeg-turbo/lib
--I/opt/homebrew/opt/jpeg-turbo/include
